@@ -70,4 +70,10 @@
     <session-timeout>15</session-timeout>
   </session-config>
 
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.js</url-pattern>
+  </servlet-mapping>
+
 </web-app>
