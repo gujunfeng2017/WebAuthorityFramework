@@ -12,12 +12,12 @@
 <head>
     <script>
         function test(){
-            var DataT = '';
+            var DataT = $("kouLing").val();
             $.ajax({
                 type : "POST",  //提交方式
                 dataType: 'json',
                 url : "<%=request.getContextPath() %>/testRelay/data",//路径
-                data : '',//数据，这里使用的是Json格式进行传输
+                data : '{"data1":DataT}',//数据，这里使用的是Json格式进行传输
                 success : function(Data){//返回数据根据结果进行相应的处理
                      DataT = Data.result;
                         alert(DataT);
@@ -36,7 +36,7 @@
         <tbody>
         <tr>
             <td>口令</td>
-            <td><input type="text" name="kouLing"></td>
+            <td><input type="text" name="kouLing" id="kouLing"></td>
         </tr>
         <tr>
             <td>密钥</td>
