@@ -1,5 +1,6 @@
 package com.swb.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -65,5 +66,15 @@ public class TestRedict{
 
         }
         return res;
+    }
+
+    @RequestMapping(value = "dataTest",produces="application/json;charset=UTF-8")
+    @ResponseBody
+    public  String showData(){
+
+        String testReturn =  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
+                "<root xmlns=\"namespace_string\"><MsgHeader><SndDt>2017-11-22T15:51:44</SndDt><MsgTp>epcc.303.001.01</MsgTp><IssrId>Z2017112000011</IssrId><Drctn>11</Drctn><SignSN>4054344069</SignSN></MsgHeader><MsgBody><SysRtnInf><SysRtnCd>00000000</SysRtnCd><SysRtnDesc>接收成功</SysRtnDesc><SysRtnTm>2017-11-22T15:51:44</SysRtnTm></SysRtnInf></MsgBody></root>\n{S:heccx2aBERiru3wP0Yc9twv9KA6EBWhbKG1ezcQ7h/r+jRBh0HvLz11rQyGe8My0dlMtI4PneXkprD9sWZqOmTheMM/bm0SdrRiYFGFTXt7uiyMcfN77g8dAUy9RwPyqzilCZmtVQGugKj1ZEuGyMboDj78wqQOOc+PwQXuL5bBeiJbWzbRd0fafKUIv66qjeKKDkt/iOhDQMLRwxv461PgOnuqy5FbGLVRuAljl+CzOSMKwmXAO3egFKuYH/JejRlRRMA+TdAR3YSyDoIBfNZW3+crAazDIUehTs1CA2EpzcoNUTG2oa6lEDrITvLGKU5l47Y+Sz6/RQFykkl7Wiw==}";
+        System.out.println(testReturn);
+        return testReturn;
     }
 }
